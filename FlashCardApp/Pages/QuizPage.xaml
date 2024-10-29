@@ -6,15 +6,15 @@
              xmlns:model="clr-namespace:FlashCardApp.Models"
              x:DataType="model:Card"
              >
-    <Grid BackgroundColor="Black" RowDefinitions=".3*, .7*" ColumnDefinitions="*">
-        <Frame BackgroundColor="DarkBlue" Grid.Row="0">
+    <Grid  RowDefinitions=".3*, .7*" ColumnDefinitions="*">
+        <Frame  Grid.Row="0">
             <VerticalStackLayout>
                 <Entry Placeholder="Front" x:Name="FrontEntry"/>
                 <Entry Placeholder="Back" x:Name="BackEntry"/>
                 <Button Text="Add" HorizontalOptions="Center" x:Name="addButton" Clicked="addButton_Clicked"/>
             </VerticalStackLayout>
         </Frame>
-        <ListView x:Name="CardsListView" BackgroundColor="Grey" HorizontalOptions="Center" Grid.Row="1">
+        <ListView x:Name="CardsListView" HorizontalOptions="Center" Grid.Row="1">
             <ListView.Header>
                 <VerticalStackLayout Background="Black">
                     <Label Text="List of Cards"/>
@@ -24,10 +24,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid RowDefinitions="*" ColumnDefinitions=".8*, .1*, .1*">
-                            <Frame BackgroundColor="Blue">
+                            <Frame BackgroundColor="DarkBlue">
                                 <HorizontalStackLayout>
                                     <Label Text="{Binding Front}" Grid.Column="0" FontSize="Small" VerticalOptions="Center"
-                                           TextColor="Black" FontAttributes="Bold"/>
+                                           TextColor="White" FontAttributes="Bold"/>
                                     <Label Text="{Binding Back}" Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
                                            IsVisible="False" TextColor="Black" FontAttributes="Bold"/>
                                 </HorizontalStackLayout>
