@@ -6,42 +6,39 @@
              xmlns:model="clr-namespace:FlashCardApp.Models"
              x:DataType="model:Card"
              >
-    <Grid  RowDefinitions=".3*, .7*" ColumnDefinitions="*">
-        <Frame  Grid.Row="0">
+    <Grid RowDefinitions=".3*, .7*" ColumnDefinitions="*">
+        <Frame Grid.Row="0">
             <VerticalStackLayout>
-                <Entry Placeholder="Front" x:Name="FrontEntry"/>
-                <Entry Placeholder="Back" x:Name="BackEntry"/>
-                <Button Text="Add" HorizontalOptions="Center" x:Name="addButton" Clicked="addButton_Clicked"/>
+                <Entry Placeholder="Front" x:Name="FrontEntry" />
+                <Entry Placeholder="Back" x:Name="BackEntry" />
+                <Button Text="Add" HorizontalOptions="Center" x:Name="addButton" Clicked="addButton_Clicked" />
             </VerticalStackLayout>
         </Frame>
         <ListView x:Name="CardsListView" HorizontalOptions="Center" Grid.Row="1">
             <ListView.Header>
                 <VerticalStackLayout Background="Black">
-                    <Label Text="List of Cards"/>
+                    <Label Text="List of Cards" />
                 </VerticalStackLayout>
             </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid RowDefinitions="*" ColumnDefinitions=".8*, .1*, .1*">
-                            <Frame BackgroundColor="DarkBlue">
+                        <Grid RowDefinitions="*" ColumnDefinitions="*, .13*, .13*">
+                            <Frame BackgroundColor="DarkBlue" Padding="10">
                                 <HorizontalStackLayout>
-                                    <Label Text="{Binding Front}" Grid.Column="0" FontSize="Small" VerticalOptions="Center"
-                                           TextColor="White" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Back}" Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
-                                           IsVisible="False" TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Front}" FontSize="Small" VerticalOptions="Center"
+                                       TextColor="White" FontAttributes="Bold" />
+                                    <Label Text="{Binding Back}" FontSize="Small" VerticalOptions="Center" 
+                                       IsVisible="False" TextColor="Black" FontAttributes="Bold" />
                                 </HorizontalStackLayout>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                </Frame.GestureRecognizers>
                             </Frame>
-                            <Button Text="Edit" Grid.Column="1" Clicked="EditButton_Clicked"/>
-                            <Button Text="Delete" Grid.Column="2" Background="Red" Clicked="DeleteButton_Clicked"/>
+                            <Button Text="Edit" Grid.Column="1" Clicked="EditButton_Clicked" />
+                            <Button Text="Delete" Grid.Column="2" BackgroundColor="Red" Clicked="DeleteButton_Clicked" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
-    
+
 </ContentPage>
