@@ -31,6 +31,9 @@
                                     <Label Text="{Binding Back}" FontSize="Small" VerticalOptions="Center" 
                                        IsVisible="False" TextColor="Black" FontAttributes="Bold" />
                                 </HorizontalStackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Frame.GestureRecognizers>
                             </Frame>
                             <Button Text="Edit" Grid.Column="1" Clicked="EditButton_Clicked" />
                             <Button Text="Delete" Grid.Column="2" BackgroundColor="Red" Clicked="DeleteButton_Clicked" />
@@ -40,5 +43,6 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
+    
 
 </ContentPage>
